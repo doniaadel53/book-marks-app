@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./image/bookmark.jpg" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="head d-flex justify-content-center py-5">
+          <h1>Bookmarker</h1>
+        </div>
+        <div class="bookmarks-body mb-5 pt-5">
+          <div class="title text-center fs-3">
+            <h3>
+              <i class="fa-solid fa-bookmark one"></i>
+              Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark two"></i>
+            </h3>
+          </div>
+          <div class="input my-5">
+            <div class="book-name mb-3">
+              <label for="basic-url" class="form-label fw-bold">
+                <i class="fa-solid fa-book-bookmark"></i>
+                Site Name</label
+              >
+              <div class="input-group">
+                <input
+                  oninput="validName()"
+                  type="text"
+                  class="form-control"
+                  id="basic-username"
+                  placeholder="Bookmark Name"
+                  aria-describedby="basic-addon3 basic-addon4"
+                />
+              </div>
+            </div>
+            <div class="book-url mb-3">
+              <label for="basic-url" class="form-label fw-bold">
+                <i class="fa-solid fa-link"></i>
+                Site URL</label
+              >
+              <div class="input-group">
+                <input
+                  oninput="validUrl()"
+                  type="text"
+                  class="form-control"
+                  id="basic-url"
+                  placeholder="Website URL"
+                  aria-describedby="basic-addon3 basic-addon4"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="text-center my-3 ">
+            <button
+            id="submit"
+              onclick="addbook()"
+              class="btn btn-submit px-5 d-block m-auto"
+              type="button"
+            >
+              Submit
+            </button>
+            <button
+            id="update"
+              onclick="update()"
+              class="btn btn-update px-5 d-none m-auto"
+              type="button"
+            >
+              update
+            </button>
+            <input id="search" oninput="search()" type="search" class="form-control  my-5" placeholder="search...">
+          </div>
+        </div>
+        <div class="book-table bg-white">
+          <table class="table text-center">
+            <thead>
+              <tr>
+                <th scope="col">Index</th>
+                <th scope="col">Website Name</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
